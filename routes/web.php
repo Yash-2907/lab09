@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminPostsController;
+use App\Http\Controllers\AdminUsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +33,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 require __DIR__.'/auth.php';
+
+Route::get('/admin/posts', [AdminPostsController::class, 'index'])->name('admin_posts');
+Route::get('/admin/users', [AdminUsersController::class, 'index'])->name('admin_users');
