@@ -11,7 +11,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.index');
     }
 
     /**
@@ -60,5 +60,9 @@ class AdminController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function __construct() {
+        $this->middleware('auth');
     }
 }
