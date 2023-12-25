@@ -57,3 +57,25 @@ Route::get('/admin/categories/{id}/edit', [
 Route::patch('/admin/categories/{id}/edit', [
     CategoryController::class, 'update'
 ])->middleware('admin')->name('admin-categories-edit');
+
+
+
+Route::get('/admin/posts', [
+    CategoryController::class, 'index'
+])->middleware('auth')->name('admin-posts');
+
+Route::get('/admin/posts/create', [
+    CategoryController::class, 'create'
+])->middleware('auth')->name('admin-posts-create');
+
+Route::post('/admin/posts/create', [
+    CategoryController::class, 'store'
+])->middleware('auth')->name('admin-posts-create');
+
+Route::get('/admin/posts/{id}/edit', [
+    CategoryController::class, 'edit'
+])->middleware('auth')->name('admin-posts-edit');
+
+Route::patch('/admin/posts/{id}/edit', [
+    CategoryController::class, 'update'
+])->middleware('auth')->name('admin-posts-edit');
