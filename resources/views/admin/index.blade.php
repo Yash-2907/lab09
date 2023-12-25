@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<x-admin-layout>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -89,5 +90,15 @@
                 >
             </header>
         </div>
+    @if($users)
+    @foreach ($users as $user)
+    <td>{{ $user->name }}</td>
+    @endforeach
+    @endif
+
+    @if(Session::has('name'))
+    <div>Flash message</div>
+    @endif
     </body>
 </html>
+</x-admin-layout>
